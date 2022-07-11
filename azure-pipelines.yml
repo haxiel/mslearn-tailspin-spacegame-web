@@ -61,6 +61,6 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
-- publish:  '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)/*.zip'
+- publish:  '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)/'
   artifact: '$(buildConfiguration)'
 
