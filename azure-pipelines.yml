@@ -61,7 +61,6 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish artifact - drop'
-  condition: succeeded()
+- publish:  '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)/*.zip'
+  artifact: '$(buildConfiguration)'
 
